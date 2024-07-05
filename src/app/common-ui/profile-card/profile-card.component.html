@@ -1,0 +1,24 @@
+@if (profile) {
+  <div class="profile-card">
+    <div class="avatar-name">
+      <img ngSrc="/baseAvatar.png" alt="avatar" class="card-avatar" height="72" width="71">
+      <div class="name-container">
+        <strong class="name">{{profile.firstName}} {{profile.lastName}}</strong>
+        <span>&#64;{{profile.username}}</span>
+      </div>
+    </div>
+    <div class="description">
+      <span>{{profile.description}}</span>
+    </div>
+    <div class="tags-container">
+      @for (tag of profile.stack; track tag) {
+        <div class="tag-container">
+          <span>{{tag}}</span>
+        </div>
+      }
+    </div>
+    <div class="actions-container">
+      <button class="base-button">Follow</button>
+    </div>
+  </div>
+}
