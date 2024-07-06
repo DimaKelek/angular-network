@@ -1,1 +1,12 @@
-<p>sign-in-page works!</p>
+<form
+  class="form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="inputs">
+    <h1>Sign In</h1>
+    <input formControlName="username" type="text" placeholder="Login">
+    <input formControlName="password" type="text" placeholder="Password">
+    <button type="submit">Sign In</button>
+  </div>
+</form>
