@@ -1,0 +1,48 @@
+.sidebar {
+  height: 100vh;
+  padding: 20px 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background-color: var(--dark-color);
+}
+
+.logo {
+  width: 61px;
+  height: 74px;
+  margin-left: 28px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 5px;
+
+  //img path {
+  //  fill: var(--light-color);
+  //}
+
+  &:hover {
+    background-color: var(--dark-color-opacity);
+    transition-duration: 0.3s;
+
+    cursor: pointer;
+
+    span {
+      transition-duration: 0.3s;
+      color: var(--primary);
+    }
+  }
+}

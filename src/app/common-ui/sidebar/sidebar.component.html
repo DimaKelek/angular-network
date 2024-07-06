@@ -1,0 +1,11 @@
+<div class="sidebar">
+  <img src="/assets/Logo-Tik-Talk.svg" alt="logo" class="logo">
+  <div class="menu">
+    @for (menuItem of menuItems; track menuItem.id) {
+      <div class="menuItem">
+        <img [src]="menuItem.iconPath" [alt]="menuItem.name">
+        <span>{{ menuItem.name }}</span>
+      </div>
+    }
+  </div>
+</div>
