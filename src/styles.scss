@@ -6,6 +6,14 @@
   --primary: #AE7AFF;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: var(--dark-color);
   color: var(--light-color);
