@@ -8,11 +8,17 @@ import { environment } from '../../../environments/environment';
 })
 export class ProfileService {
   http = inject(HttpClient);
-  baseApiUrl = environment.BASE_URL;
+  baseApiUrl = `${environment.BASE_URL}/account`;
 
   getTestAccounts() {
-    return this.http.get<IProfile[]>(
-      `${this.baseApiUrl}/account/test_accounts`,
-    );
+    return this.http.get<IProfile[]>(`${this.baseApiUrl}/test_accounts`);
+  }
+
+  getMe() {
+    return this.http
+      .get<IProfile>(`${this.baseApiUrl}/me`)
+      .subscribe((value) => {
+        console.log('### my profile', value);
+      });
   }
 }
