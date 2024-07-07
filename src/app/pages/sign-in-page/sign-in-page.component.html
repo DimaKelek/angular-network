@@ -1,12 +1,27 @@
-<form
-  class="form"
-  [formGroup]="form"
-  (ngSubmit)="onSubmit()"
->
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="inputs">
-    <h1>Sign In</h1>
-    <input formControlName="username" type="text" placeholder="Login">
-    <input formControlName="password" type="text" placeholder="Password">
-    <button type="submit">Sign In</button>
+    <h1 class="title">Sign In</h1>
+    <div class="input-container">
+      <span class="input-label">Telegram ID</span>
+      <input
+        formControlName="username"
+        type="text"
+        placeholder="Enter Telegram ID"
+        class="input"
+      />
+    </div>
+    <div class="input-container">
+      <span class="input-label">Password</span>
+      <input
+        formControlName="password"
+        type="text"
+        placeholder="Enter Password"
+        class="input"
+      />
+    </div>
+    <button class="submit-button" type="submit" [disabled]="form.invalid">
+      Sign In
+    </button>
   </div>
+  <img class="logo" src="/assets/Logo-Tik-Talk-huge.svg" alt="logo" />
 </form>
