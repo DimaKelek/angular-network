@@ -29,9 +29,8 @@ export class SignInPageComponent {
       this.authService
         //@ts-ignore
         .signIn(this.form.value)
-        .subscribe((value) => {
+        .subscribe(() => {
           this.router.navigate(['']);
-          console.log('### value', value);
         });
     }
   }
