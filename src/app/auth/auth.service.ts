@@ -40,7 +40,7 @@ export class AuthService {
   updateTokens() {
     return this.http
       .post<IAuthResponse>(`${this.baseApiUrl}/refresh`, {
-        refresh_token: this.refreshToken,
+        refresh_token: this.cookieService.get('refreshToken'),
       })
       .pipe(
         catchError((err) => {

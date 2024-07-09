@@ -1,0 +1,12 @@
+@if (follower) {
+  <div class="follower">
+    <img
+      class="follower-avatar"
+      [src]="follower.avatarUrl | imgUrl"
+      alt="base"
+    />
+    <span class="follower-name">
+      {{ follower.firstName }} {{ follower.lastName }}
+    </span>
+  </div>
+}

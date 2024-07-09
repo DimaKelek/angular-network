@@ -1,11 +1,23 @@
 <div class="sidebar">
-  <img src="/assets/Logo-Tik-Talk.svg" alt="logo" class="logo">
-  <div class="menu">
-    @for (menuItem of menuItems; track menuItem.id) {
-      <div class="menuItem">
-        <img [src]="menuItem.iconPath" [alt]="menuItem.name">
+  <img src="/assets/Logo-Tik-Talk.svg" alt="logo" class="logo" />
+  <nav>
+    <ul class="menu">
+      <li *ngFor="let menuItem of menuItems" class="menuItem">
+        <svg [icon]="menuItem.iconPath" class="icon"></svg>
         <span>{{ menuItem.name }}</span>
-      </div>
-    }
+      </li>
+    </ul>
+  </nav>
+  <div class="followers-container">
+    <p class="followers-label">Followers</p>
+    <div>
+      @for (follower of followers$ | async; track follower.id) {
+        <app-follower [follower]="follower" />
+      }
+    </div>
+    <p class="all-button">
+      All Followers
+      <svg icon="chevron" class="chevron-icon"></svg>
+    </p>
   </div>
 </div>
