@@ -1,7 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IProfile } from './types';
+import { IBaseResponse, IProfile } from './types';
 import { environment } from '../../../environments/environment';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -20,5 +21,16 @@ export class ProfileService {
       .subscribe((value) => {
         console.log('### my profile', value);
       });
+  }
+
+  getFollowers(amount: number) {
+    return this.http
+      .get<IBaseResponse>(`${this.baseApiUrl}/subscribers/`, {
+        params: {
+          page: 1,
+          size: amount,
+        },
+      })
+      .pipe(map((value) => value.items));
   }
 }

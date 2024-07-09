@@ -10,3 +10,12 @@ export interface IProfile {
   city: string;
   description: string;
 }
+
+export interface IBaseResponse<ItemType = IProfile> {
+  items: ItemType[];
+
+  total: number;
+  page: number;
+  size: number;
+  pages: number;
+}
