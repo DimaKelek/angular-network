@@ -20,4 +20,10 @@
       <svg icon="chevron" class="chevron-icon"></svg>
     </p>
   </div>
+  <footer class="footer">
+    @if (me(); as me) {
+      <app-follower [follower]="me" />
+    }
+    <svg icon="gear" class="rightIcon"></svg>
+  </footer>
 </div>

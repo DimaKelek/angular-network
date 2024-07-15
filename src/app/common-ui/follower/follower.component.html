@@ -1,10 +1,20 @@
 @if (follower) {
   <div class="follower">
-    <img
-      class="follower-avatar"
-      [src]="follower.avatarUrl | imgUrl"
-      alt="base"
-    />
+    @if (follower.avatarUrl) {
+      <img
+        class="follower-avatar"
+        [src]="follower.avatarUrl | imgUrl"
+        alt="base"
+      />
+    } @else {
+      <img
+        class="follower-avatar"
+        ngSrc="/assets/images/emptyAvatar.png"
+        alt="base"
+        height="113"
+        width="112"
+      />
+    }
     <span class="follower-name">
       {{ follower.firstName }} {{ follower.lastName }}
     </span>
