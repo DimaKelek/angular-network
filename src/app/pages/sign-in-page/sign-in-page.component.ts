@@ -7,11 +7,12 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-sign-in-page',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgOptimizedImage],
   templateUrl: './sign-in-page.component.html',
   styleUrl: './sign-in-page.component.scss',
 })
